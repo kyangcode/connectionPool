@@ -1,11 +1,14 @@
+#pragma once
+
 #include <string>
 #include <mysql.h>
 #include <vector>
 #include <unordered_map>
+#include "Db.h"
 
 namespace std 
 {
-	class MySQL 
+	class MySQL : public Db 
 	{
 	public:
 		MySQL(); // 构造函数
