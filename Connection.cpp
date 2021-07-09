@@ -6,17 +6,17 @@ namespace std
 	
 	Connection::~Connection() { delete dbPtr; }
 
-	void Connection::connect(string host, size_t port, string user, string passwd, string db) throw()
+	void Connection::connect(const string &host, size_t port, const string &user, const string &passwd, const string &db) throw()
 	{
 		dbPtr->connect(host, port, user, passwd, db);
 	}
 
-	vector<unordered_map<string, string>> Connection::query(string sql) throw()
+	vector<unordered_map<string, string>> Connection::query(const string &sql) throw()
 	{
 		return dbPtr->query(sql);
 	}
 
-	size_t Connection::execute(string sql) throw()
+	size_t Connection::execute(const string &sql) throw()
 	{
 		return dbPtr->execute(sql);
 	}

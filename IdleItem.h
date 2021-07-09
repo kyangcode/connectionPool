@@ -1,13 +1,14 @@
 #pragma once
 
-#include "Connection.h"
+#include "Db.h"
 
 namespace std
 {
 	struct IdleItem
 	{
-		Db *dbPtr;
-		size_t timestamp;
-	}
+		IdleItem(Db* dbPtr, size_t timestamp);
+		Db* _dbPtr;
+		size_t _timestamp;
+	};
 
 }

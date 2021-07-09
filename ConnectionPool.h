@@ -17,7 +17,7 @@ namespace std
 		void deallocate(Db *dbPtr);
 	private:
 		list<IdleItem*> _idleList; // 空闲连接链表
-		list<Connection*> _useList; // 已分配连接链表
+		list<UseItem*> _useList; // 已分配连接链表
 		
 		size_t _initSize; // 初始连接数量
 		size_t _maxSize; // 最大连接数量

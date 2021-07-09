@@ -11,9 +11,9 @@ namespace std
 		Connection();
 		~Connection();
 
-		void connect(string host, size_t port, string user, string passwd, string db) throw();		
-		vector<unordered_map<string, string>> query(string sql) throw();
-		size_t execute(string sql) throw();
+		void connect(const string &host, size_t port, const string &user, const string &passwd, const string &db) throw();		
+		vector<unordered_map<string, string>> query(const string &sql) throw();
+		size_t execute(const string &sql) throw();
 	private:
 		Db *dbPtr;
 	};

@@ -15,7 +15,7 @@ namespace std
 		}
 	}
 
-	void MySQL::connect(string host, size_t port, string user, string passwd, string db) throw()
+	void MySQL::connect(const string &host, size_t port, const string &user, const string &passwd, const string &db) throw()
 	{
 		mysql = mysql_init(nullptr);
 		if (mysql_real_connect(mysql, host.c_str(), user.c_str(), passwd.c_str(), db.c_str(), port, nullptr, 0) == nullptr)
@@ -24,7 +24,7 @@ namespace std
 		}
 	}
 
-	vector<unordered_map<string, string>> MySQL::query(string sql) throw()
+	vector<unordered_map<string, string>> MySQL::query(const string &sql) throw()
 	{
 		if (mysql_query(mysql, sql.c_str()) != 0)
 		{
@@ -61,7 +61,7 @@ namespace std
 		return data;	
 	}
 
-	size_t MySQL::execute(string sql) throw()
+	size_t MySQL::execute(const string &sql) throw()
 	{
 		if (mysql_query(mysql, sql.c_str()) != 0)
 		{
